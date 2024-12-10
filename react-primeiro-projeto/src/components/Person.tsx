@@ -1,17 +1,16 @@
 type Props = {
     name: string;
-    description: string;
-    avatar: string;
+    avatar?: string;
     roles: string[];
 }
 
 export const Person = (props: Props) => {
     
-    const {name, description, avatar, roles}  = props;
+    const {name, avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZNuq8F_2PRinfLuxr3n_33tyQoSBe2K3kmw&s', roles}  = props;
 
     return (
-        <>
-            <h1 style={{ color: 'red', fontSize: '30px' }}>{name}</h1>
+        <div className="p-3">
+            <h1>{name}</h1>
             <img 
                 src={avatar}
                 alt={name}
@@ -19,10 +18,9 @@ export const Person = (props: Props) => {
             />
             <h2>Suas Empresas:</h2>
             <ul>
-                <li>{description}</li>
                 <li>{roles[0]}</li>
                 <li>{roles[1]}</li>
             </ul>
-        </>
+        </div>
     );
 }
