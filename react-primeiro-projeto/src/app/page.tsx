@@ -1,13 +1,23 @@
-import { Card } from "@/components/Card";
-import { Circle } from "@/components/Circle";
+import { peopleList } from "@/data/peopleList";
 
-function Page() {
-  return <>
-    <h1 className="font-bold text-2xl">Olá, mundo!</h1>
-    <h3>Algum outro texto!</h3>
-    <Card phrase="Alguma frase TOP" author="Algum cara" />
-  </>;
-  
+const Page = () => {
+
+  return (
+
+    <div>
+      <h1 className="font-bold text-2xl">Olá Mundo</h1>
+      <h3>Algum outro texto</h3>
+      {peopleList.length > 0 && 
+        <ul>
+          {peopleList.map(person => 
+            <li key={person.id}>{person.name} - {person.profession}</li>
+          )}
+        </ul>
+      }
+    </div>
+
+  );
+
 }
 
 export default Page;
