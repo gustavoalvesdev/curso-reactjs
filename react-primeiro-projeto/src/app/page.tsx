@@ -1,3 +1,4 @@
+import { Hora } from "@/components/Hora";
 import { peopleList } from "@/data/peopleList";
 
 const Page = () => {
@@ -6,17 +7,8 @@ const Page = () => {
 
   return (
 
-    <div>
-      <h1 className="font-bold text-2xl">Olá Mundo</h1>
-      <h3>Algum outro texto</h3>
-      {chemists.length > 0 &&
-        <>
-          <h3>Lista de químicos:</h3>
-          <ul>
-            {chemists.map(person => <li key={person.id}>{person.name}</li>)}
-          </ul>
-        </>
-      }
+    <div className="bg-blue-500 w-full h-screen flex items-center justify-center">
+      <Hora />
     </div>
 
   );
